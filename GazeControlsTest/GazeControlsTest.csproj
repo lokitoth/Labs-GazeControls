@@ -150,7 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommunityToolkit.Labs.Uwp.GazeControls\CommunityToolkit.Labs.Uwp.GazeControls.csproj">
-      <Project>{352191f5-8704-45a1-acb3-ca47c6898a99}</Project>
+      <Project>{07b3a546-af2a-4ce0-a885-2a42a1d6b8e6}</Project>
       <Name>CommunityToolkit.Labs.Uwp.GazeControls</Name>
     </ProjectReference>
   </ItemGroup>
