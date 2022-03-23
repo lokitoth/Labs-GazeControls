@@ -144,14 +144,14 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.Toolkit.Uwp.Input.GazeInteraction">
-      <Version>7.0.2</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommunityToolkit.Labs.Uwp.GazeControls\CommunityToolkit.Labs.Uwp.GazeControls.csproj">
       <Project>{07b3a546-af2a-4ce0-a885-2a42a1d6b8e6}</Project>
       <Name>CommunityToolkit.Labs.Uwp.GazeControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\wct\Microsoft.Toolkit.Uwp.Input.GazeInteraction\Microsoft.Toolkit.Uwp.Input.GazeInteraction.csproj">
+      <Name>Microsoft.Toolkit.Uwp.Input.GazeInteraction</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

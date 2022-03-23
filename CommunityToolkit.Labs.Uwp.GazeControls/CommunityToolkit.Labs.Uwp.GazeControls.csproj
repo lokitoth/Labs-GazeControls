@@ -19,6 +19,14 @@
     </Description>
     <Version>0.3.0</Version>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|uap10.0|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|uap10.0|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
   
   <ItemGroup>
     <Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml">
@@ -44,9 +52,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Toolkit.Uwp.UI" Version="7.0.2" />
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI" Version="7.0.2"  />
     <!-- C:\w\IGGazing\GazeInteraction \wct\Microsoft.Toolkit.Uwp.Input.GazeInteraction\Microsoft.Toolkit.Uwp.Input.GazeInteraction.csproj -->
-    <ProjectReference Include="..\..\wct\Microsoft.Toolkit.Uwp.Input.GazeInteraction\Microsoft.Toolkit.Uwp.Input.GazeInteraction.csproj" />
+    <ProjectReference Include="..\..\wct\Microsoft.Toolkit.Uwp.Input.GazeInteraction\Microsoft.Toolkit.Uwp.Input.GazeInteraction.csproj"  />
   </ItemGroup>
 
   <ItemGroup>
