@@ -384,12 +384,15 @@ namespace CommunityToolkit.Labs.Uwp.GazeControls
                 Target.Select((int)replaceSegment.SourceTextSegment.StartPosition, (int)replaceSegment.SourceTextSegment.Length);
             }
 
-            string prediction = (sender as Button).Content.ToString();
-            var dataPackage = new DataPackage();
-            dataPackage.SetText(prediction);
-            Clipboard.SetContent(dataPackage);
-            Target.PasteFromClipboard();
-            UpdatePredictions();
+            string prediction = (sender as Button)?.Content?.ToString();
+            if (prediction != null)
+            {
+                var dataPackage = new DataPackage();
+                dataPackage.SetText(prediction);
+                Clipboard.SetContent(dataPackage);
+                Target.PasteFromClipboard();
+                UpdatePredictions();
+            }
         }
 
         private List<string> GetPrevWords()
