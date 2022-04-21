@@ -8,7 +8,8 @@
     xmlns:g="using:Microsoft.Toolkit.Uwp.Input.GazeInteraction"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    x:Name="FullKeyboard">
+    x:Name="FullKeyboard"
+    ml:LayoutFeaturizer.FeaturizeLayoutAs="FullKeyboard">
 
     <k:GazeKeyboard.PageList>
         <x:String>MainPage</x:String>
