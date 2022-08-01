@@ -146,6 +146,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MLIntegration\MLIntegration.csproj">
+      <Project>{9C4C0B2B-6A8A-4053-AA08-6F5B903AC080}</Project>
+      <Name>MLIntegration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CommunityToolkit.Labs.Uwp.GazeControls\CommunityToolkit.Labs.Uwp.GazeControls.csproj">
       <Project>{07b3a546-af2a-4ce0-a885-2a42a1d6b8e6}</Project>
       <Name>CommunityToolkit.Labs.Uwp.GazeControls</Name>
