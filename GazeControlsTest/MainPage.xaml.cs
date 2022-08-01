@@ -6,10 +6,13 @@ using System;
 using System.Collections.Generic;
 using CommunityToolkit.Labs.Uwp.GazeControls;
 using Microsoft.Toolkit.Uwp.Input.GazeInteraction;
+using MSR.IGGazing.MLIntegration.ScreenCaptureEx;
 using Windows.ApplicationModel.Core;
+using Windows.Graphics.Capture;
 using Windows.Media.SpeechSynthesis;
 using Windows.Storage;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -47,9 +50,25 @@ namespace GazeInputTest
             await GazeKeyboard.TryLoadLayoutAsync(layoutFile);
             GazeKeyboard.Target = TheTextBox;
             GazeKeyboard.PredictionTargets = new Button[] { Prediction0, Prediction1, Prediction2 };
+
+            
+            GraphicsCaptureItem item = await new GraphicsCapturePicker().PickSingleItemAsync();
+            if (CaptureInterop.IsEnabled)
+            {
+               CaptureInterop.PrepareCaptureTarget(item);
+               CaptureInterop.StartCapture();
+
+               Application.Current.Suspending += this.Current_Suspending;
+            }
         }
 
-        private void GazeInput_IsDeviceAvailableChanged(object sender, object e)
+      private void Current_Suspending(object sender, Windows.ApplicationModel.SuspendingEventArgs e)
+      {
+         Windows.ApplicationModel.SuspendingDeferral deferral = e.SuspendingOperation.GetDeferral();
+         CaptureInterop.StopCapture(deferral.Complete);
+      }
+
+      private void GazeInput_IsDeviceAvailableChanged(object sender, object e)
         {
             DeviceAvailable.Text = GazeInput.IsDeviceAvailable ? "Eye tracker device available" : "No eye tracker device available";
         }
