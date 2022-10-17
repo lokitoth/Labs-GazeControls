@@ -36,6 +36,9 @@
             <Setter Property="g:GazeInput.RepeatDelayDuration" Value="0:0:0.8"/>
             <Setter Property="g:GazeInput.MaxDwellRepeatCount" Value="1" />
          </Style>
+         <Style x:Key="Candidate" TargetType="ButtonBase" BasedOn="{StaticResource Alpha}">
+            <Setter Property="FontSize" Value="14"/>
+         </Style>
       </Grid.Resources>
       <Grid.ColumnDefinitions>
          <ColumnDefinition MaxWidth="180" Width="Auto" />
@@ -82,11 +85,16 @@
             <TextBox Grid.Column="0" x:Name="TheTextBox" ml:ElementIdentifier.Id="TheTextBox" HorizontalAlignment="Stretch" FontSize="18"/>
             <Button Grid.Column="1" Content="Play" Click="OnPlay"/>
          </Grid>
-         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <Button x:Name="Prediction0" Height="100" MinWidth="300" Style="{StaticResource Alpha}" />
-            <Button x:Name="Prediction1" Height="100" MinWidth="300" Style="{StaticResource Alpha}" />
-            <Button x:Name="Prediction2" Height="100" MinWidth="300" Style="{StaticResource Alpha}" />
-         </StackPanel>
+         <Grid Grid.Row="1" HorizontalAlignment="Center" Visibility="Visible" >
+            <Grid.ColumnDefinitions>
+               <ColumnDefinition/>
+               <ColumnDefinition/>
+               <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Prediction0" Grid.Column="0" MaxHeight="100" Style="{StaticResource Candidate}" />
+            <Button x:Name="Prediction1" Grid.Column="1" MaxHeight="100" Style="{StaticResource Candidate}" />
+            <Button x:Name="Prediction2" Grid.Column="2" MaxHeight="100" Style="{StaticResource Candidate}" />
+         </Grid>
          <gc:GazeKeyboard Grid.Row="2" x:Name="GazeKeyboard"/>
       </Grid>
       <Grid Grid.Column="2" Visibility="Collapsed">
