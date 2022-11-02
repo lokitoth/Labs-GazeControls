@@ -9,9 +9,10 @@
   xmlns:gc="using:CommunityToolkit.Labs.Uwp.GazeControls"
   xmlns:ml="using:MSR.IGGazing.MLIntegration.Element"
   g:GazeInput.Interaction="Enabled"
+  g:GazeInput.DwellDuration="0:0:0.8"
   mc:Ignorable="d"
   ml:LayoutFeaturizer.FeaturizeLayoutAs="MainPage"
-  Margin="50">
+  Margin="150">
 
    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
       <Grid.Resources>
