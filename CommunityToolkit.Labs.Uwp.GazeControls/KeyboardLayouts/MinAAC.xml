@@ -88,7 +88,7 @@
     <Button     Grid.Row="2" Grid.Column="6" Style="{StaticResource Alpha}" Content="b" />
     <Button     Grid.Row="2" Grid.Column="7" Style="{StaticResource Alpha}" Content="n" />
     <Button     Grid.Row="2" Grid.Column="8" Style="{StaticResource Alpha}" Content="m" />
-    <Button     Grid.Row="2" Grid.Column="9" Style="{StaticResource Symbol}" Content="&#xE74D;">
+    <Button     Grid.Row="2" Grid.Column="9" Style="{StaticResource Symbol}" Content="&#xE74D;" ml:ElementIdentifier.Id="Delete">
         <k:GazeKeyboard.VKList>
             <x:Int32>17</x:Int32> <!-- VK_CONTROL -->
             <x:Int32>65</x:Int32> <!-- VK_A -->
