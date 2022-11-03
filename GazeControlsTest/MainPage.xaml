@@ -86,7 +86,7 @@
             <TextBox Grid.Column="0" x:Name="TheTextBox" ml:ElementIdentifier.Id="TheTextBox" HorizontalAlignment="Stretch" FontSize="18"/>
             <Button Grid.Column="1" Content="Play" Click="OnPlay"/>
          </Grid>
-         <Grid Grid.Row="1" HorizontalAlignment="Stretch" Visibility="Visible" >
+         <Grid Grid.Row="1" HorizontalAlignment="Stretch" Visibility="Collapsed" >
             <Grid.ColumnDefinitions>
                <ColumnDefinition/>
                <ColumnDefinition/>
