@@ -46,6 +46,7 @@
   <Capabilities>
     <uap:Capability Name="documentsLibrary"/>
     <rescap:Capability Name="broadFileSystemAccess"/>
+    <rescap:Capability Name="runFullTrust"/>
     <uap:Capability Name="musicLibrary"/>
     <uap:Capability Name="picturesLibrary"/>
     <uap:Capability Name="videosLibrary"/>

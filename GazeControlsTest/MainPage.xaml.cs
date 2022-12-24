@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using CommunityToolkit.Labs.Uwp.GazeControls;
 using Microsoft.Toolkit.Uwp.Input.GazeInteraction;
+using MSR.IGGazing.MLIntegration;
 using MSR.IGGazing.MLIntegration.ScreenCaptureEx;
 using Windows.ApplicationModel.Core;
 using Windows.Graphics.Capture;
@@ -51,14 +52,17 @@ namespace GazeInputTest
             GazeKeyboard.Target = TheTextBox;
             GazeKeyboard.PredictionTargets = new Button[] { Prediction0, Prediction1, Prediction2 };
 
-            
-            GraphicsCaptureItem item = await new GraphicsCapturePicker().PickSingleItemAsync();
-            if (CaptureInterop.IsEnabled)
+            if (DefaultConfiguration.ShouldCaptureVideo)
             {
-               CaptureInterop.PrepareCaptureTarget(item);
-               CaptureInterop.StartCapture();
+                var coreWindow = CoreWindow.GetForCurrentThread();
+                GraphicsCaptureItem item = await new GraphicsCapturePicker().PickSingleItemAsync(); //CaptureHelper.CreateItemForCoreWindow(coreWindow); - not auth for LowIL
+                if (CaptureInterop.IsEnabled)
+                {
+                   CaptureInterop.PrepareCaptureTarget(item);
+                   CaptureInterop.StartCapture();
 
-               Application.Current.Suspending += this.Current_Suspending;
+                   Application.Current.Suspending += this.Current_Suspending;
+                }
             }
         }
 
