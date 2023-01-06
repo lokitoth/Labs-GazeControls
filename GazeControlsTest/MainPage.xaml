@@ -83,7 +83,7 @@
                <ColumnDefinition Width="80*"/>
                <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="0" x:Name="TheTextBox" ml:ElementIdentifier.Id="TheTextBox" ml:TextBoxFeaturizer.FeaturizeTextInfoAs="TextBox"  HorizontalAlignment="Stretch" FontSize="18"/>
+            <TextBox Grid.Column="0" x:Name="TheTextBox" ml:ElementIdentifier.Id="TheTextBox" ml:TextBoxFeaturizer.FeaturizeTextInfoAs="TextBox" TextWrapping="Wrap" HorizontalAlignment="Stretch" FontSize="18"/>
             <Button Grid.Column="1" Content="Play" Click="OnPlay"/>
          </Grid>
          <Grid Grid.Row="1" HorizontalAlignment="Stretch" Visibility="Collapsed" >
